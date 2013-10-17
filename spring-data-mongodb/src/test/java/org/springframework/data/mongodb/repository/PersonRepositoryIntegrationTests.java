@@ -69,5 +69,11 @@ public class PersonRepositoryIntegrationTests extends AbstractPersonRepositoryIn
 
 		User realFan = realFans.get(0);
 		assertThat(realFan.username, is(thomas.username));
+
+		realFans = oliver.getRealFans();
+		// proxy should be resolved now
+
+		realFan = realFans.get(0);
+		assertThat(realFan.username, is(thomas.username));
 	}
 }
